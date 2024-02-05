@@ -1,0 +1,16 @@
+src/test.py
+# Ignore ROS build and workspace files
+/build/
+/install/
+/log/
+/local_setup.*
+/install_manifest.*
+
+
+# Ignore Python cache and virtual environment files
+__pycache__/
+venv/
+*.pyc
+
+# Ignore VSCode settings
+.vscode/
