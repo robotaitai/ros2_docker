@@ -1,0 +1,12 @@
+{
+    "name": "ROS 2 Humble EtherCAT",
+    "context": "..",
+    "dockerFile": "Dockerfile",
+    "settings": { 
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "ms-iot.vscode-ros"
+    ],
+    "remoteUser": "root"
+}
