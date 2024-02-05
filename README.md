@@ -18,9 +18,10 @@ This repository contains a Docker-based development environment for ROS 2 projec
 ## Getting Started
 
 1. **Clone the repository**:
-'''
+```
 git clone https://github.com/robotaitai/ros2_docker.git
-'''
+```
+
 
 2. **Open the project in Visual Studio Code**:
 - Launch VS Code.
@@ -32,10 +33,10 @@ git clone https://github.com/robotaitai/ros2_docker.git
 ## Building the Docker Image
 
 - The Docker image can be built manually using:
-'''
+```
 cd ros2_docker/.devcontainer
 docker build -t ros2_docker_dev .
-'''
+```
 
 
 ## Using the Development Environment
