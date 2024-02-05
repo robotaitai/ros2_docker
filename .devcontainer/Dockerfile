@@ -13,10 +13,11 @@ RUN apt-get update && apt-get install -y \
     cmake \
     python3-pip \
     && curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | apt-key add - \
-    && sh -c 'echo "deb [arch=arm64] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list' \
+    && echo "deb http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list \
     && apt-get update \
     && apt-get install -y ros-humble-ros-base \
     && rm -rf /var/lib/apt/lists/*
+
 
 # Install colcon from source
 RUN pip3 install -U colcon-common-extensions
@@ -29,4 +30,3 @@ RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
 
 # Set your working directory
 WORKDIR /your_workspace
-    
