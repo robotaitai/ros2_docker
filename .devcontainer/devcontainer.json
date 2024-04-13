@@ -1,12 +1,59 @@
 {
-    "name": "ROS 2 Humble EtherCAT",
+    "name": "ROS2 Docker",
     "context": "..",
     "dockerFile": "Dockerfile",
-    "settings": { 
-        "terminal.integrated.shell.linux": "/bin/bash"
+    "settings": {
+        // "terminal.integrated.shell.linux": "/bin/bash"
+        "terminal.integrated.profiles.linux": {
+            "zsh": {
+                "path": "zsh"
+            },
+            "bash": {
+                "path": "bash"
+            }
+        },
+        "terminal.integrated.defaultProfile.linux": "zsh"
     },
-    "extensions": [
-        "ms-iot.vscode-ros"
-    ],
+    "build": {
+        "args": {
+            "WORKSPACE": "/home/${localEnv:USERNAME}/${localWorkspaceFolderBasename}"
+        },
+        "runArgs": [
+            "--privileged",
+            "--network=host",
+            "--cap-add=SYS_PTRACE",
+            "--security-opt=seccomp:unconfined",
+            "--security-opt=apparmor:unconfined",
+            "--volume=/dev:/dev",
+            "--volume=/tmp/.X11-unix:/tmp/.X11-unix"
+        ],
+        "extensions": [
+            "ms-iot.vscode-ros"
+        ],
+        "customizations": {
+            "vscode": {
+                "extensions": [
+                    "DotJoshJohnson.xml",
+                    "ms-azuretools.vscode-docker",
+                    "ms-python.python",
+                    "ms-vscode.cpptools",
+                    "ms-vscode.cpptools-themes",
+                    "donjayamanne.python-extension-pack",
+                    "ms-vscode.cpptools-extension-pack",
+                    "redhat.vscode-yaml",
+                    "smilerobotics.urdf",
+                    "streetsidesoftware.code-spell-checker",
+                    "twxs.cmake",
+                    "yzhang.markdown-all-in-one",
+                    "zachflower.uncrustify",
+                    "betwo.b2-catkin-tools",
+                    "mhutchie.git-graph",
+                    "GitHub.copilot",
+                    "ms-iot.vscode-ros",
+                    "mhutchie.git-graph",
+                    "augustocdias.tasks-shell-input"
+                ]
+            }
+        }
     "remoteUser": "root"
-}
+    }
